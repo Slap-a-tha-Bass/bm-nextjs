@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import Loader from "../components/loader";
+import Card from "../components/card";
 
 export async function getStaticProps() {
   const res = await fetch("https://www.benjaminmoore.com/api/colors");
@@ -20,7 +21,7 @@ export default function Gray({ colors }) {
     if (colors) {
       setLoading(false);
     }
-  }, []);
+  }, [colors]);
   if (loading) return <Loader />;
   const [colorName] = Object.entries(colors);
   const colorNames = Object.entries(colorName[1]);
@@ -39,18 +40,7 @@ export default function Gray({ colors }) {
             gray.map((color, index) => {
               const bmColor = color[1];
               return (
-                <div
-                  className={styles.card}
-                  key={index}
-                  style={{
-                    color: `#${bmColor.hex}`,
-                    border: `5px solid #${bmColor.hex}`,
-                  }}
-                >
-                  <p className={styles.bmColorName}>{bmColor.name}</p>
-                  <p className={styles.bmColorValue}>{bmColor.family}</p>
-                  <p className={styles.bmColorValue}>#{bmColor.hex}</p>
-                </div>
+                <Card name={bmColor.name} hex={bmColor.hex} key={bmColor.hex} />
               );
             })}
         </div>

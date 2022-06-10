@@ -20,7 +20,7 @@ export default function Brown({ colors }) {
     if (colors) {
       setLoading(false);
     }
-  }, []);
+  }, [colors]);
   if (loading) return <Loader />;
   const [colorName] = Object.entries(colors);
   const colorNames = Object.entries(colorName[1]);
@@ -39,18 +39,7 @@ export default function Brown({ colors }) {
             brown.map((color, index) => {
               const bmColor = color[1];
               return (
-                <div
-                  className={styles.card}
-                  key={index}
-                  style={{
-                    color: `#${bmColor.hex}`,
-                    border: `5px solid #${bmColor.hex}`,
-                  }}
-                >
-                  <p className={styles.bmColorName}>{bmColor.name}</p>
-                  <p className={styles.bmColorValue}>{bmColor.family}</p>
-                  <p className={styles.bmColorValue}>#{bmColor.hex}</p>
-                </div>
+                <Card name={bmColor.name} hex={bmColor.hex} key={bmColor.hex} />
               );
             })}
         </div>
