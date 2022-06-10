@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import Loader from "../components/loader";
+import Card from "../components/card";
 
 export async function getStaticProps() {
   const res = await fetch("https://www.benjaminmoore.com/api/colors");
