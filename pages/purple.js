@@ -20,7 +20,7 @@ export default function Purple({ colors }) {
     if (colors) {
       setLoading(false);
     }
-  }, []);
+  }, [colors]);
   if (loading) return <Loader />;
   const [colorName] = Object.entries(colors);
   const colorNames = Object.entries(colorName[1]);
