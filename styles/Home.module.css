@@ -42,14 +42,22 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: clamp(1.25rem, 2vw, 2.5rem);
+  background: linear-gradient(45deg, #ff0000 12.5%, #e16100 12.5%, #e16100 25%,#cdc600 25%, #cdc600 37.5%, #008616 37.5%, #008616 50%, #0016bc 50%, #0016bc 75%, #510087 75%, #510087);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .title,
 .description {
   text-align: center;
 }
-
+.bgTitle {
+  background-color: #000000;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 20vh;
+}
 .grid {
   display: flex;
   align-items: center;
@@ -62,6 +70,7 @@
   padding: 1.5rem;
   text-align: left;
   color: inherit;
+  font-weight: 300;
   text-decoration: none;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
@@ -77,6 +86,7 @@
 .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
+  font-weight: 300;
 }
 .card p {
   margin: 0;
@@ -87,14 +97,14 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  background-color: #0070f3;
+  background: linear-gradient(45deg, #ff0000 12.5%, #e16100 12.5%, #e16100 25%,#cdc600 25%, #cdc600 37.5%, #008616 37.5%, #008616 50%, #0016bc 50%, #0016bc 75%, #510087 75%, #510087);
   color: white;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 200px;
-  height: 100px;
+  height: 75px;
 }
 .logo {
   height: 1em;
@@ -103,7 +113,7 @@
 .nav {
   display: flex;
   justify-content: space-evenly;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(0.25rem, 1vw, 2rem);
   margin: 1rem 0;
 }
 .nav a {

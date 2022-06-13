@@ -15,7 +15,7 @@ export default function Card({ name, hex }) {
   return (
     <div
       className={styles.card}
-      style={{ color: `#${hex}`, border: `5px solid #${hex}` }}
+      style={{ backgroundColor: `#${hex}`, border: `5px solid #${hex}`, color: "black" }}
       onClick={handleClick}
     >
       {copied && (
